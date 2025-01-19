@@ -45,5 +45,12 @@ console.log('All documents:');
 console.log(findResult);
 
 ```
+## 4. Finding one document
+
+```
+const findOneResult = await collection.findOne({ name: 'John Doe' });
+console.log('Found document:');
+console.log(findOneResult);
+```
 
 
