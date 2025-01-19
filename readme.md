@@ -1,61 +1,61 @@
-## 1. Inserting multiple documents
 
-```
-// Inserting multiple documents
-const documents = [
-            {
-              name: 'John Doe',
-              age: 30,
-              gender: 'Male',
-              address: ['123 Main St', 'Apt 301'],
-              education: { ssc: 'Science', hsc: 'Science' }
-            },
-            {
-              name: 'Jane Smith',
-              age: 28,
-              gender: 'Female',
-              address: ['456 Oak Ave', 'Suite 102'],
-              education: { ssc: 'Science', hsc: 'Science' }
-            }
-        ];
+## module - 05
+> 5-2 Insert,insertOne, find, findOne, field filtering, project
+---
+---
+> 5-3 $eq, $neq, $gt, $lt, $gte, $lte
 
-const insertResult = await collection.insertMany(documents);
-console.log(`${insertResult.insertedCount} documents inserted`);
-```
+---
+> 5-4 $in, $nin, implicit and condition
 
-## 2. Inserting a single document
+---
+> 5-5 $and, $or, implicit vs explicit
 
-```
-const insertOneResult = await collection.insertOne({
-            name: 'Michael Brown',
-            age: 25,
-            gender: 'Male',
-            address: ['789 Elm St', 'Unit B'],
-            education: { ssc: 'Science', hsc: 'Science' }
-        });
-console.log(`Inserted ID: ${insertOneResult.insertedId}`);
-```
-## 3. Finding documents
+---
+> 5-6 $exists, $type,$size
 
-```
-const findResult = await collection.find({}).toArray();
-console.log('All documents:');
-console.log(findResult);
+---
+> 5-7 $all , $elemMatch
 
-```
-## 4. Finding one document
+---
+> 5-8 $set, $addToSet, $push,
 
-```
-const findOneResult = await collection.findOne({ name: 'John Doe' });
-console.log('Found document:');
-console.log(findOneResult);
-```
-## 5. Field filtering (excluding _id field)
+---
+> 5-9 $unset, $pop, $pull, $pullAll
 
-```
-const filteredResult = await collection.find({}).project({ _id: 0 }).toArray();
-console.log('Filtered documents (excluding _id field):');
-console.log(filteredResult);
-```
+---
+> 5-10 More about $set, how to explore documentation
 
+---
+> 5-11 delete documents, drop collection and how to explore by yourself
 
+## module - 06
+---
+> 6-0 Intro the powerful aggregation framework
+
+---
+> 6-1 $match , $project aggregation stage
+
+---
+> 6-2 $addFields , $out , $merge aggregation stage
+
+---
+> 6-3 $group , $sum , $push aggregation stage
+
+---
+> 6-4 explore more about $group & $project
+
+---
+> 6-6 $bucket, $sort, and $limit aggregation stage
+
+---
+> 6-7 $facet, multiple pipeline aggregation stage
+
+---
+> 6-8 $lookup stage, embedding vs referencing.mp4
+
+---
+> 6-9 What is indexing, COLLSCAN vs IXSCAN
+
+---
+> 6-10 Explore compound index and text index
