@@ -1,7 +1,5 @@
 ## 1. Inserting multiple documents
 
->
-
 ```
  // Inserting multiple documents
     const documents = [
@@ -20,8 +18,22 @@
               education: { ssc: 'Science', hsc: 'Science' }
             }
         ];
-        
+
     const insertResult = await collection.insertMany(documents);
     console.log(`${insertResult.insertedCount} documents inserted`);
 
+```
+
+## 2. Inserting a single document
+
+```
+ const insertOneResult = await collection.insertOne({
+            name: 'Michael Brown',
+            age: 25,
+            gender: 'Male',
+            address: ['789 Elm St', 'Unit B'],
+            education: { ssc: 'Science', hsc: 'Science' }
+        });
+  console.log(`Inserted ID: ${insertOneResult.insertedId}`);
+  
 ```
