@@ -1,8 +1,8 @@
 ## 1. Inserting multiple documents
 
 ```
- // Inserting multiple documents
-    const documents = [
+// Inserting multiple documents
+const documents = [
             {
               name: 'John Doe',
               age: 30,
@@ -19,21 +19,31 @@
             }
         ];
 
-    const insertResult = await collection.insertMany(documents);
-    console.log(`${insertResult.insertedCount} documents inserted`);
+const insertResult = await collection.insertMany(documents);
+console.log(`${insertResult.insertedCount} documents inserted`);
 
 ```
 
 ## 2. Inserting a single document
 
 ```
- const insertOneResult = await collection.insertOne({
+const insertOneResult = await collection.insertOne({
             name: 'Michael Brown',
             age: 25,
             gender: 'Male',
             address: ['789 Elm St', 'Unit B'],
             education: { ssc: 'Science', hsc: 'Science' }
         });
-  console.log(`Inserted ID: ${insertOneResult.insertedId}`);
+console.log(`Inserted ID: ${insertOneResult.insertedId}`);
   
 ```
+## 3. Finding documents
+
+```
+const findResult = await collection.find({}).toArray();
+console.log('All documents:');
+console.log(findResult);
+
+```
+
+
